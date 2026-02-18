@@ -15,15 +15,15 @@
     --secondary: 180 10% 20%;
     --secondary-foreground: 0 0% 90%;
     --muted: 180 10% 18%;
-    --muted-foreground: 180 10% 60%;
+    --muted-foreground: 180 10% 55%;
     --accent: 45 90% 55%;
     --accent-foreground: 180 20% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 180 10% 22%;
+    --border: 180 10% 20%;
     --input: 180 10% 18%;
     --ring: 160 60% 45%;
-    --radius: 0.75rem;
+    --radius: 1rem;
   }
 }
 
@@ -33,6 +33,28 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+  }
+  
+  /* Safe area support for notched devices */
+  .safe-area-inset {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Hide number input spinners */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
   }
 }
